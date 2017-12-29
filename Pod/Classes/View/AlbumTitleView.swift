@@ -54,6 +54,13 @@ final class AlbumTitleView: UIView {
         // Set image
         albumButton?.setImage(arrowDownImage, for: UIControlState())
     }
+	
+	override open var intrinsicContentSize: CGSize {
+		
+		// gives the title the correct size, so it can be selected
+		// https://stackoverflow.com/questions/44932084/ios-11-navigationitem-titleview-width-not-set
+		return UILayoutFittingExpandedSize
+	}
     
     lazy var arrowDownImage: UIImage? = {
         // Get path for BSImagePicker bundle
